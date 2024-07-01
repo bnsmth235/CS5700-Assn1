@@ -9,7 +9,8 @@ class LineTests {
         val p1 = Point(0.0, 0.0)
         val p2 = Point(1.0, 1.0)
         val line = Line(p1, p2)
-        assertEquals(p1, line.getPoint1())
+        assertEquals(p1.getX(), line.getPoint1().getX())
+        assertEquals(p1.getY(), line.getPoint1().getY())
     }
 
     @Test
@@ -17,7 +18,8 @@ class LineTests {
         val p1 = Point(0.0, 0.0)
         val p2 = Point(1.0, 1.0)
         val line = Line(p1, p2)
-        assertEquals(p2, line.getPoint2())
+        assertEquals(p2.getX(), line.getPoint2().getY())
+        assertEquals(p2.getY(), line.getPoint2().getY())
     }
 
     @Test
@@ -42,8 +44,10 @@ class LineTests {
         val p2 = Point(1.0, 1.0)
         val line = Line(p1, p2)
         line.move(2.0, 2.0)
-        assertEquals(Point(2.0, 2.0), line.getPoint1())
-        assertEquals(Point(3.0, 3.0), line.getPoint2())
+        assertEquals(2.0, line.getPoint1().getX())
+        assertEquals(2.0, line.getPoint1().getY())
+        assertEquals(3.0, line.getPoint2().getX())
+        assertEquals(3.0, line.getPoint2().getY())
     }
 
     @Test

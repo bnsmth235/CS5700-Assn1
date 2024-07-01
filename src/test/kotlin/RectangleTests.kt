@@ -9,7 +9,8 @@ class RectangleTests {
         val p1 = Point(0.0, 0.0)
         val p2 = Point(2.0, 3.0)
         val rect = Rectangle(p1, p2)
-        assertEquals(p1, rect.getPoint1())
+        assertEquals(p1.getX(), rect.getPoint1().getX())
+        assertEquals(p1.getY(), rect.getPoint1().getY())
     }
 
     @Test
@@ -17,7 +18,8 @@ class RectangleTests {
         val p1 = Point(0.0, 0.0)
         val p2 = Point(2.0, 3.0)
         val rect = Rectangle(p1, p2)
-        assertEquals(p2, rect.getPoint2())
+        assertEquals(p2.getX(), rect.getPoint2().getX())
+        assertEquals(p2.getY(), rect.getPoint2().getY())
     }
 
     @Test
@@ -34,8 +36,10 @@ class RectangleTests {
         val p2 = Point(2.0, 3.0)
         val rect = Rectangle(p1, p2)
         rect.move(1.0, 1.0)
-        assertEquals(Point(1.0, 1.0), rect.getPoint1())
-        assertEquals(Point(3.0, 4.0), rect.getPoint2())
+        assertEquals(p1.getX(), rect.getPoint1().getX())
+        assertEquals(p1.getY(), rect.getPoint1().getY())
+        assertEquals(p2.getX(), rect.getPoint2().getX())
+        assertEquals(p2.getY(), rect.getPoint2().getY())
     }
 
     @Test

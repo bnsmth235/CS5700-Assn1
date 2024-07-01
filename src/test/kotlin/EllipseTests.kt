@@ -7,8 +7,9 @@ class EllipseTests {
     @Test
     fun testGetCenter() {
         val center = Point(1.0, 1.0)
-        val ellipse = Ellipse(center, 2.0, 3.0)
-        assertEquals(center, ellipse.getCenter())
+        val ellipse = Ellipse(center, 1.0, 1.0)
+        assertEquals(center.getX(), ellipse.getCenter().getX())
+        assertEquals(center.getY(), ellipse.getCenter().getY())
     }
 
     @Test
@@ -37,7 +38,8 @@ class EllipseTests {
         val center = Point(1.0, 1.0)
         val ellipse = Ellipse(center, 2.0, 3.0)
         ellipse.move(1.0, 1.0)
-        assertEquals(Point(2.0, 2.0), ellipse.getCenter())
+        assertEquals(Point(2.0, 2.0).getX(), ellipse.getCenter().getX())
+        assertEquals(Point(2.0, 2.0).getY(), ellipse.getCenter().getY())
     }
 
     @Test
